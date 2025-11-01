@@ -5,7 +5,7 @@ import random
 from collections import deque
 from dataclasses import dataclass
 import gymnasium as gym
-from shimmy.envs.atari import AtariEnv
+import gymnasium.envs.atari
 
 
 # --- register ALE Atari environments ---
@@ -18,7 +18,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # --------------------------------
-
 
 # ----------------------------
 # Utilities / preprocessing
@@ -180,23 +179,18 @@ class SARSAgent:
 # Training / Evaluation loops
 # ----------------------------
 
+import gymnasium as gym
 def make_env(_env_id: str, seed: int, render_mode=None):
-    """
-    Build Atari Pong without relying on Gymnasium's registry.
-    Uses shimmy.AtariEnv directly, which wraps ale-py.
-    """
-    # Minimal action set is easier to learn
-    env = AtariEnv(
-        game="pong",                 # Atari game key
-        mode=0,                      # default game mode
-        difficulty=0,                # default difficulty
-        obs_type="rgb",              # we do our own preprocessing
-        frameskip=4,                 # like DQN settings
+    import gymnasium as gym
+    # Build Atari Pong environment using Gymnasium
+    env = gym.make(
+        "ALE/Pong-v5",
+        render_mode=render_mode,             # None or "human"
+        frameskip=4,
         repeat_action_probability=0.0,
         full_action_space=False,
-        render_mode=render_mode,     # None or "human"
+        obs_type="rgb",                      # default, explicit for clarity
     )
-    # Gymnasium-style wrappers still work
     env = gym.wrappers.RecordEpisodeStatistics(env, deque_size=1000)
     try:
         env.action_space.seed(seed)
@@ -204,6 +198,8 @@ def make_env(_env_id: str, seed: int, render_mode=None):
     except Exception:
         pass
     return env
+
+
 
 def evaluate(agent: SARSAgent, episodes=3, render=False, seed=42):
     env = make_env(agent.cfg.env_id, seed=seed, render_mode="human" if render else None)
