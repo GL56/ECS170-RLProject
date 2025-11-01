@@ -5,8 +5,7 @@ import random
 from collections import deque
 from dataclasses import dataclass
 import gymnasium as gym
-import gymnasium.envs.atari
-
+import ale_py # <--- This is where the magic happens, registering the environments
 
 # --- register ALE Atari environments ---
 #egister_envs(ale_gym)
@@ -191,7 +190,7 @@ def make_env(_env_id: str, seed: int, render_mode=None):
         full_action_space=False,
         obs_type="rgb",                      # default, explicit for clarity
     )
-    env = gym.wrappers.RecordEpisodeStatistics(env, deque_size=1000)
+    env = gym.wrappers.RecordEpisodeStatistics(env)
     try:
         env.action_space.seed(seed)
         env.observation_space.seed(seed)
