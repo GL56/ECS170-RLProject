@@ -1,0 +1,112 @@
+A.L.E: Arcade Learning Environment (version 0.11.2+ecc1138)
+[Powered by Stella]
+Episode    1/100 | return=-21.00 | len= 946 | eps=0.997 | loss=0.00000 | steps=946
+Episode    2/100 | return=-21.00 | len= 915 | eps=0.994 | loss=0.02111 | steps=1861
+Episode    3/100 | return=-20.00 | len= 921 | eps=0.991 | loss=0.02165 | steps=2782
+Episode    4/100 | return=-19.00 | len= 951 | eps=0.987 | loss=0.02153 | steps=3733
+Episode    5/100 | return=-21.00 | len= 944 | eps=0.984 | loss=0.02232 | steps=4677
+Episode    6/100 | return=-20.00 | len= 948 | eps=0.981 | loss=0.02159 | steps=5625
+Episode    7/100 | return=-20.00 | len= 950 | eps=0.978 | loss=0.02112 | steps=6575
+Episode    8/100 | return=-21.00 | len= 852 | eps=0.975 | loss=0.02095 | steps=7427
+Episode    9/100 | return=-19.00 | len= 980 | eps=0.972 | loss=0.01651 | steps=8407
+Episode   10/100 | return=-20.00 | len=1046 | eps=0.968 | loss=0.01484 | steps=9453
+Episode   11/100 | return=-20.00 | len= 949 | eps=0.965 | loss=0.01381 | steps=10402
+Episode   12/100 | return=-21.00 | len= 852 | eps=0.962 | loss=0.01186 | steps=11254
+Episode   13/100 | return=-21.00 | len= 862 | eps=0.959 | loss=0.01083 | steps=12116
+Episode   14/100 | return=-20.00 | len=1009 | eps=0.956 | loss=0.01159 | steps=13125
+Episode   15/100 | return=-21.00 | len= 929 | eps=0.953 | loss=0.01108 | steps=14054
+Episode   16/100 | return=-20.00 | len= 870 | eps=0.949 | loss=0.01190 | steps=14924
+Episode   17/100 | return=-19.00 | len= 992 | eps=0.946 | loss=0.01165 | steps=15916
+Episode   18/100 | return=-21.00 | len= 824 | eps=0.943 | loss=0.01137 | steps=16740
+Episode   19/100 | return=-21.00 | len= 870 | eps=0.940 | loss=0.01129 | steps=17610
+Episode   20/100 | return=-21.00 | len= 890 | eps=0.937 | loss=0.01015 | steps=18500
+Episode   21/100 | return=-20.00 | len= 843 | eps=0.933 | loss=0.01006 | steps=19343
+Episode   22/100 | return=-18.00 | len=1112 | eps=0.930 | loss=0.01035 | steps=20455
+Episode   23/100 | return=-20.00 | len= 948 | eps=0.927 | loss=0.01191 | steps=21403
+Episode   24/100 | return=-19.00 | len= 972 | eps=0.924 | loss=0.01139 | steps=22375
+Episode   25/100 | return=-21.00 | len= 972 | eps=0.921 | loss=0.01016 | steps=23347
+  Eval over 3 eps: mean_return=-21.00 ± 0.00
+  Saved checkpoint to dqn_pong.pt
+Episode   26/100 | return=-20.00 | len= 948 | eps=0.918 | loss=0.01188 | steps=24295
+Episode   27/100 | return=-21.00 | len= 855 | eps=0.914 | loss=0.01054 | steps=25150
+Episode   28/100 | return=-20.00 | len=1111 | eps=0.911 | loss=0.01024 | steps=26261
+Episode   29/100 | return=-21.00 | len= 933 | eps=0.908 | loss=0.01026 | steps=27194
+Episode   30/100 | return=-21.00 | len= 844 | eps=0.905 | loss=0.01049 | steps=28038
+Episode   31/100 | return=-19.00 | len= 933 | eps=0.902 | loss=0.00951 | steps=28971
+Episode   32/100 | return=-21.00 | len= 853 | eps=0.899 | loss=0.01038 | steps=29824
+Episode   33/100 | return=-21.00 | len= 880 | eps=0.895 | loss=0.00889 | steps=30704
+Episode   34/100 | return=-21.00 | len= 882 | eps=0.892 | loss=0.00825 | steps=31586
+Episode   35/100 | return=-20.00 | len= 884 | eps=0.889 | loss=0.00769 | steps=32470
+Episode   36/100 | return=-20.00 | len= 862 | eps=0.886 | loss=0.00802 | steps=33332
+Episode   37/100 | return=-21.00 | len= 994 | eps=0.883 | loss=0.00750 | steps=34326
+Episode   38/100 | return=-20.00 | len= 998 | eps=0.880 | loss=0.00797 | steps=35324
+Episode   39/100 | return=-21.00 | len= 764 | eps=0.877 | loss=0.00759 | steps=36088
+Episode   40/100 | return=-20.00 | len= 870 | eps=0.873 | loss=0.00803 | steps=36958
+Episode   41/100 | return=-20.00 | len=1115 | eps=0.870 | loss=0.00814 | steps=38073
+Episode   42/100 | return=-19.00 | len=1065 | eps=0.867 | loss=0.00911 | steps=39138
+Episode   43/100 | return=-20.00 | len= 931 | eps=0.864 | loss=0.00974 | steps=40069
+Episode   44/100 | return=-21.00 | len= 850 | eps=0.861 | loss=0.00849 | steps=40919
+Episode   45/100 | return=-20.00 | len= 897 | eps=0.858 | loss=0.00871 | steps=41816
+Episode   46/100 | return=-21.00 | len= 820 | eps=0.854 | loss=0.00731 | steps=42636
+Episode   47/100 | return=-19.00 | len=1275 | eps=0.851 | loss=0.00752 | steps=43911
+Episode   48/100 | return=-20.00 | len= 898 | eps=0.848 | loss=0.00827 | steps=44809
+Episode   49/100 | return=-19.00 | len=1291 | eps=0.845 | loss=0.00747 | steps=46100
+Episode   50/100 | return=-21.00 | len= 843 | eps=0.842 | loss=0.00736 | steps=46943
+  Eval over 3 eps: mean_return=-20.00 ± 0.00
+  Saved checkpoint to dqn_pong.pt
+Episode   51/100 | return=-20.00 | len= 870 | eps=0.839 | loss=0.00787 | steps=47813
+Episode   52/100 | return=-17.00 | len=1175 | eps=0.835 | loss=0.00824 | steps=48988
+Episode   53/100 | return=-19.00 | len= 967 | eps=0.832 | loss=0.00842 | steps=49955
+Episode   54/100 | return=-20.00 | len=1056 | eps=0.829 | loss=0.00874 | steps=51011
+Episode   55/100 | return=-20.00 | len= 963 | eps=0.826 | loss=0.00837 | steps=51974
+Episode   56/100 | return=-20.00 | len= 966 | eps=0.823 | loss=0.00813 | steps=52940
+Episode   57/100 | return=-21.00 | len=1054 | eps=0.820 | loss=0.00861 | steps=53994
+Episode   58/100 | return=-19.00 | len=1105 | eps=0.816 | loss=0.00829 | steps=55099
+Episode   59/100 | return=-20.00 | len= 963 | eps=0.813 | loss=0.00831 | steps=56062
+Episode   60/100 | return=-18.00 | len=1179 | eps=0.810 | loss=0.00822 | steps=57241
+Episode   61/100 | return=-21.00 | len=1034 | eps=0.807 | loss=0.00863 | steps=58275
+Episode   62/100 | return=-20.00 | len=1223 | eps=0.804 | loss=0.00741 | steps=59498
+Episode   63/100 | return=-18.00 | len=1148 | eps=0.800 | loss=0.00709 | steps=60646
+Episode   64/100 | return=-20.00 | len=1293 | eps=0.797 | loss=0.00803 | steps=61939
+Episode   65/100 | return=-19.00 | len=1405 | eps=0.794 | loss=0.00843 | steps=63344
+Episode   66/100 | return=-20.00 | len=1023 | eps=0.791 | loss=0.00864 | steps=64367
+Episode   67/100 | return=-20.00 | len= 987 | eps=0.788 | loss=0.00851 | steps=65354
+Episode   68/100 | return=-20.00 | len=1077 | eps=0.785 | loss=0.00824 | steps=66431
+Episode   69/100 | return=-18.00 | len=1293 | eps=0.781 | loss=0.00887 | steps=67724
+Episode   70/100 | return=-19.00 | len=1078 | eps=0.778 | loss=0.00885 | steps=68802
+Episode   71/100 | return=-17.00 | len=1184 | eps=0.775 | loss=0.00858 | steps=69986
+Episode   72/100 | return=-20.00 | len=1176 | eps=0.772 | loss=0.00879 | steps=71162
+Episode   73/100 | return=-19.00 | len=1025 | eps=0.769 | loss=0.00908 | steps=72187
+Episode   74/100 | return=-21.00 | len= 971 | eps=0.766 | loss=0.00841 | steps=73158
+Episode   75/100 | return=-20.00 | len= 856 | eps=0.762 | loss=0.00893 | steps=74014
+  Eval over 3 eps: mean_return=-14.00 ± 0.00
+  Saved checkpoint to dqn_pong.pt
+Episode   76/100 | return=-19.00 | len=1056 | eps=0.759 | loss=0.00901 | steps=75070
+Episode   77/100 | return=-20.00 | len=1218 | eps=0.756 | loss=0.00851 | steps=76288
+Episode   78/100 | return=-18.00 | len=1550 | eps=0.753 | loss=0.00850 | steps=77838
+Episode   79/100 | return=-21.00 | len=1115 | eps=0.750 | loss=0.00861 | steps=78953
+Episode   80/100 | return=-19.00 | len=1216 | eps=0.747 | loss=0.00791 | steps=80169
+Episode   81/100 | return=-16.00 | len=1335 | eps=0.744 | loss=0.00743 | steps=81504
+Episode   82/100 | return=-19.00 | len=1133 | eps=0.740 | loss=0.00785 | steps=82637
+Episode   83/100 | return=-19.00 | len=1151 | eps=0.737 | loss=0.00871 | steps=83788
+Episode   84/100 | return=-19.00 | len=1184 | eps=0.734 | loss=0.00863 | steps=84972
+Episode   85/100 | return=-20.00 | len=1152 | eps=0.731 | loss=0.00861 | steps=86124
+Episode   86/100 | return=-20.00 | len=1099 | eps=0.728 | loss=0.00767 | steps=87223
+Episode   87/100 | return=-19.00 | len=1095 | eps=0.725 | loss=0.00742 | steps=88318
+Episode   88/100 | return=-20.00 | len= 974 | eps=0.721 | loss=0.00788 | steps=89292
+Episode   89/100 | return=-21.00 | len= 912 | eps=0.718 | loss=0.00787 | steps=90204
+Episode   90/100 | return=-20.00 | len=1076 | eps=0.715 | loss=0.00780 | steps=91280
+Episode   91/100 | return=-18.00 | len=1416 | eps=0.712 | loss=0.00753 | steps=92696
+Episode   92/100 | return=-21.00 | len= 989 | eps=0.709 | loss=0.00840 | steps=93685
+Episode   93/100 | return=-20.00 | len=1177 | eps=0.706 | loss=0.00870 | steps=94862
+Episode   94/100 | return=-20.00 | len=1051 | eps=0.702 | loss=0.00844 | steps=95913
+Episode   95/100 | return=-20.00 | len=1109 | eps=0.699 | loss=0.00788 | steps=97022
+Episode   96/100 | return=-17.00 | len=1268 | eps=0.696 | loss=0.00854 | steps=98290
+Episode   97/100 | return=-21.00 | len=1227 | eps=0.693 | loss=0.00877 | steps=99517
+Episode   98/100 | return=-18.00 | len=1646 | eps=0.690 | loss=0.00961 | steps=101163
+Episode   99/100 | return=-18.00 | len=1225 | eps=0.686 | loss=0.00860 | steps=102388
+Episode  100/100 | return=-19.00 | len=1487 | eps=0.683 | loss=0.00820 | steps=103875
+  Eval over 3 eps: mean_return=-10.00 ± 0.00
+  Saved checkpoint to dqn_pong.pt
+Training complete. Model saved to dqn_pong.pt
+Final eval over 5 eps: mean_return=-10.00 ± 0.00
