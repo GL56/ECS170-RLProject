@@ -4,6 +4,7 @@ import math
 import random
 from collections import deque
 from dataclasses import dataclass
+from typing import Optional
 import gymnasium as gym
 import ale_py # <--- This is where the magic happens, registering the environments
 
@@ -105,11 +106,22 @@ class Config:
     max_steps_per_ep: int = 5000
     gamma: float = 0.99
     learning_rate: float = 1e-4
+    lr_decay_gamma: float = 1.0        # < 1.0 enables exponential LR decay
+    lr_decay_frequency: int = 1        # step scheduler every N episodes
+    frame_stack: int = 4
+    frameskip: int = 4
+    repeat_action_probability: float = 0.0
+    full_action_space: bool = False
+    obs_type: str = "rgb"
     eps_start: float = 1.0
     eps_end: float = 0.05
     eps_decay_episodes: int = 300  # linear decay over episodes
+    eps_decay_strategy: str = "linear"  # "linear" or "exp"
+    eps_decay_rate: float = 0.995       # used when strategy == "exp"
     grad_clip: float = 5.0
+    reward_clip: Optional[float] = 1.0
     eval_every: int = 25
+    eval_episodes: int = 3
     render_eval: bool = False
     save_path: str = "sarsa_pong.pt"
 
@@ -123,14 +135,22 @@ class SARSAgent:
         self.cfg = cfg
         self.device = device
         self.n_actions = n_actions
-        self.net = QNet(in_channels=4, n_actions=n_actions).to(device)
+        self.net = QNet(in_channels=cfg.frame_stack, n_actions=n_actions).to(device)
         self.optim = torch.optim.Adam(self.net.parameters(), lr=cfg.learning_rate)
+        self.scheduler = None
+        if 0.0 < cfg.lr_decay_gamma < 1.0:
+            self.scheduler = torch.optim.lr_scheduler.ExponentialLR(self.optim, gamma=cfg.lr_decay_gamma)
 
     def epsilon(self, episode_idx: int) -> float:
-        # linear decay
-        t = min(episode_idx, self.cfg.eps_decay_episodes)
-        eps = self.cfg.eps_start + (self.cfg.eps_end - self.cfg.eps_start) * (t / self.cfg.eps_decay_episodes)
-        return float(eps)
+        strategy = self.cfg.eps_decay_strategy.lower()
+        if strategy == "exp":
+            decay = max(0.0, self.cfg.eps_decay_rate) ** max(0, episode_idx)
+            eps = self.cfg.eps_end + (self.cfg.eps_start - self.cfg.eps_end) * decay
+        else:
+            decay_episodes = max(1, self.cfg.eps_decay_episodes)
+            t = min(episode_idx, decay_episodes)
+            eps = self.cfg.eps_start + (self.cfg.eps_end - self.cfg.eps_start) * (t / decay_episodes)
+        return float(max(self.cfg.eps_end, min(self.cfg.eps_start, eps)))
 
     @torch.no_grad()
     def select_action(self, state_4x84x84: np.ndarray, eps: float) -> int:
@@ -167,6 +187,13 @@ class SARSAgent:
         self.optim.step()
         return float(loss.item())
 
+    def maybe_step_lr_scheduler(self, episode_idx: int):
+        if self.scheduler is None:
+            return
+        freq = max(1, self.cfg.lr_decay_frequency)
+        if episode_idx % freq == 0:
+            self.scheduler.step()
+
     def save(self, path: str):
         torch.save(self.net.state_dict(), path)
 
@@ -179,16 +206,16 @@ class SARSAgent:
 # ----------------------------
 
 import gymnasium as gym
-def make_env(_env_id: str, seed: int, render_mode=None):
+def make_env(cfg: Config, seed: int, render_mode=None):
     import gymnasium as gym
     # Build Atari Pong environment using Gymnasium
     env = gym.make(
-        "ALE/Pong-v5",
+        cfg.env_id,
         render_mode=render_mode,             # None or "human"
-        frameskip=4,
-        repeat_action_probability=0.0,
-        full_action_space=False,
-        obs_type="rgb",                      # default, explicit for clarity
+        frameskip=cfg.frameskip,
+        repeat_action_probability=cfg.repeat_action_probability,
+        full_action_space=cfg.full_action_space,
+        obs_type=cfg.obs_type,
     )
     env = gym.wrappers.RecordEpisodeStatistics(env)
     try:
@@ -200,11 +227,12 @@ def make_env(_env_id: str, seed: int, render_mode=None):
 
 
 
-def evaluate(agent: SARSAgent, episodes=3, render=False, seed=42):
-    env = make_env(agent.cfg.env_id, seed=seed, render_mode="human" if render else None)
-    fs = FrameStack(4)
+def evaluate(agent: SARSAgent, episodes: Optional[int] = None, render=False, seed=42):
+    env = make_env(agent.cfg, seed=seed, render_mode="human" if render else None)
+    fs = FrameStack(agent.cfg.frame_stack)
     returns = []
-    for _ in range(episodes):
+    total_episodes = episodes if episodes is not None else agent.cfg.eval_episodes
+    for _ in range(total_episodes):
         obs, _ = env.reset(seed=random.randint(0, 10_000))
         state = fs.reset(obs)
         done = False
@@ -231,8 +259,8 @@ def train(cfg: Config):
     torch.manual_seed(cfg.seed)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    env = make_env(cfg.env_id, seed=cfg.seed)
-    fs = FrameStack(4)
+    env = make_env(cfg, seed=cfg.seed)
+    fs = FrameStack(cfg.frame_stack)
 
     n_actions = env.action_space.n
     agent = SARSAgent(n_actions=n_actions, cfg=cfg, device=device)
@@ -260,7 +288,10 @@ def train(cfg: Config):
             next_action = agent.select_action(next_state, eps if not done else 0.0)
 
             # SARSA update
-            loss = agent.sarsa_update(state, action, reward, next_state, next_action, done)
+            reward_td = reward
+            if cfg.reward_clip is not None:
+                reward_td = float(np.clip(reward, -cfg.reward_clip, cfg.reward_clip))
+            loss = agent.sarsa_update(state, action, reward_td, next_state, next_action, done)
             ep_loss_sum += loss
             ep_return += float(reward)
 
@@ -272,12 +303,14 @@ def train(cfg: Config):
 
         # Periodic evaluation
         if (ep % cfg.eval_every) == 0:
-            mean_ret, std_ret = evaluate(agent, episodes=3, render=cfg.render_eval)
-            print(f"  Eval over 3 eps: mean_return={mean_ret:.2f} ± {std_ret:.2f}")
+            mean_ret, std_ret = evaluate(agent, episodes=cfg.eval_episodes, render=cfg.render_eval)
+            print(f"  Eval over {cfg.eval_episodes} eps: mean_return={mean_ret:.2f} ± {std_ret:.2f}")
             if mean_ret > best_eval:
                 best_eval = mean_ret
                 agent.save(cfg.save_path)
                 print(f"  Saved checkpoint to {cfg.save_path}")
+
+        agent.maybe_step_lr_scheduler(ep)
 
     env.close()
     # Final save
@@ -285,14 +318,19 @@ def train(cfg: Config):
     print(f"Training complete. Model saved to {cfg.save_path}")
 
     # Final eval
-    mean_ret, std_ret = evaluate(agent, episodes=5, render=cfg.render_eval)
-    print(f"Final eval over 5 eps: mean_return={mean_ret:.2f} ± {std_ret:.2f}")
+    final_eps = max(5, cfg.eval_episodes)
+    mean_ret, std_ret = evaluate(agent, episodes=final_eps, render=cfg.render_eval)
+    print(f"Final eval over {final_eps} eps: mean_return={mean_ret:.2f} ± {std_ret:.2f}")
 
 
 if __name__ == "__main__":
     cfg = Config(
         total_episodes=500,  # increase for better play (e.g., 2,000+)
         eval_every=25,
+        eval_episodes=5,
+        eps_decay_strategy="exp",
+        eps_decay_rate=0.997,
+        lr_decay_gamma=0.9995,
         render_eval=False,
     )
     train(cfg)
