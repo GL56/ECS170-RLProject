@@ -134,6 +134,7 @@ def load_and_test_model():
     """
     Load a trained model and test it with RENDERING
         (nice to have for later stages of agent development since this will show us how the agent is playing)
+    This function is only for loading a trained model for playing/testing
     """
     env_id = "ALE/Pong-v5"
     
@@ -173,12 +174,68 @@ def load_and_test_model():
     
     env.close()
 
+def resume_training(
+    model_path="models/dqn_pong_final.zip",
+    total_timesteps=50000
+):
+    """
+    Continue training a previously saved DQN model. This is not the same as prev function to test/play
+    """
+    if not os.path.exists(model_path):
+        print(f"Model file '{model_path}' not found. Train a model first.")
+        return None
+
+    env_id = "ALE/Pong-v5"
+
+    # Recreates the training environment exactly the same as in train_dqn_pong()
+    env = make_atari_env(
+        env_id,
+        n_envs=1,
+        seed=42,
+        env_kwargs={
+            "frameskip": 4,
+            "repeat_action_probability": 0.0,
+            "full_action_space": False,
+            "obs_type": "rgb",
+        }
+    )
+    env = VecFrameStack(env, n_stack=4)
+    env = VecMonitor(env, filename=os.path.join('log/', "monitor_resume"))
+
+    # Load the existing model with the new env
+    print(f"Loading model from '{model_path}'...")
+    model = DQN.load(model_path, env=env)
+    print("Model loaded, continuing training...")
+
+    # Continue training
+    model.learn(
+        total_timesteps=total_timesteps,
+        progress_bar=True
+    )
+
+    # Save continued model
+    new_model_path = "models/dqn_pong_continued"
+    model.save(new_model_path)
+    print(f"Training continued. New model saved to '{new_model_path}'")
+
+    env.close()
+    return model
+
+
 if __name__ == "__main__":
     # Reminder to self: need to have these packages before running script
     # uv add stable-baselines3 gymnasium[atari] ale-py torch numpy
     
     # Train the model
     model = train_dqn_pong()
+    
+    # Uncomment to resume training
+    '''
+    resume_training(
+        model_path="models/dqn_pong_final.zip",
+        total_timesteps=50000
+    )
+    '''
     
     # Uncomment to watch the trained agent play in a separate window (relevant for final versions of our agent)
     # load_and_test_model()
