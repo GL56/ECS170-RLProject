@@ -200,10 +200,7 @@ class SARSAgent:
     def load(self, path: str):
         self.net.load_state_dict(torch.load(path, map_location=self.device))
 
-
-# ----------------------------
-# Training / Evaluation loops
-# ----------------------------
+#training loops
 
 import gymnasium as gym
 def make_env(cfg: Config, seed: int, render_mode=None):
@@ -299,7 +296,7 @@ def train(cfg: Config):
             steps += 1
 
         avg_loss = ep_loss_sum / max(1, steps)
-        print(f"Episode {ep:4d}/{cfg.total_episodes} | return={ep_return:6.2f} | len={steps:4d} | eps={eps:.3f} | loss={avg_loss:.5f}")
+        print(f"Episode {ep:4d}/{cfg.total_episodes} | return={ep_return:6.2f} | len={steps:4d} | eps={eps:.3f} | loss={avg_loss:.5f}", flush=True)
 
         # Periodic evaluation
         if (ep % cfg.eval_every) == 0:
