@@ -1,0 +1,525 @@
+A.L.E: Arcade Learning Environment (version 0.11.2+ecc1138)
+[Powered by Stella]
+Episode    1/500 | return=-21.00 | len= 946 | eps=0.997 | loss=0.02251
+Episode    2/500 | return=-20.00 | len=1071 | eps=0.994 | loss=0.02052
+Episode    3/500 | return=-20.00 | len= 919 | eps=0.991 | loss=0.02410
+Episode    4/500 | return=-21.00 | len= 872 | eps=0.989 | loss=0.02347
+Episode    5/500 | return=-21.00 | len= 825 | eps=0.986 | loss=0.02444
+Episode    6/500 | return=-20.00 | len= 866 | eps=0.983 | loss=0.02535
+Episode    7/500 | return=-20.00 | len= 984 | eps=0.980 | loss=0.02213
+Episode    8/500 | return=-19.00 | len=1089 | eps=0.977 | loss=0.02134
+Episode    9/500 | return=-21.00 | len= 826 | eps=0.975 | loss=0.02480
+Episode   10/500 | return=-19.00 | len=1004 | eps=0.972 | loss=0.02242
+Episode   11/500 | return=-20.00 | len= 878 | eps=0.969 | loss=0.02429
+Episode   12/500 | return=-20.00 | len= 838 | eps=0.966 | loss=0.02572
+Episode   13/500 | return=-20.00 | len= 945 | eps=0.964 | loss=0.02248
+Episode   14/500 | return=-21.00 | len= 764 | eps=0.961 | loss=0.02655
+Episode   15/500 | return=-21.00 | len= 852 | eps=0.958 | loss=0.02395
+Episode   16/500 | return=-19.00 | len=1022 | eps=0.955 | loss=0.02206
+Episode   17/500 | return=-21.00 | len= 900 | eps=0.953 | loss=0.02256
+Episode   18/500 | return=-21.00 | len= 992 | eps=0.950 | loss=0.02022
+Episode   19/500 | return=-21.00 | len= 850 | eps=0.947 | loss=0.02402
+Episode   20/500 | return=-19.00 | len=1037 | eps=0.945 | loss=0.02187
+Episode   21/500 | return=-20.00 | len= 917 | eps=0.942 | loss=0.02313
+Episode   22/500 | return=-20.00 | len=1012 | eps=0.939 | loss=0.02105
+Episode   23/500 | return=-20.00 | len= 842 | eps=0.937 | loss=0.02500
+Episode   24/500 | return=-19.00 | len=1041 | eps=0.934 | loss=0.02156
+Episode   25/500 | return=-19.00 | len=1037 | eps=0.931 | loss=0.02157
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+  Saved checkpoint to sarsa_pong.pt
+Episode   26/500 | return=-20.00 | len= 916 | eps=0.929 | loss=0.02300
+Episode   27/500 | return=-21.00 | len= 854 | eps=0.926 | loss=0.02378
+Episode   28/500 | return=-20.00 | len= 917 | eps=0.923 | loss=0.02290
+Episode   29/500 | return=-21.00 | len= 886 | eps=0.921 | loss=0.02256
+Episode   30/500 | return=-21.00 | len= 826 | eps=0.918 | loss=0.02392
+Episode   31/500 | return=-19.00 | len=1063 | eps=0.916 | loss=0.02105
+Episode   32/500 | return=-21.00 | len= 824 | eps=0.913 | loss=0.02448
+Episode   33/500 | return=-21.00 | len= 845 | eps=0.910 | loss=0.02386
+Episode   34/500 | return=-21.00 | len= 933 | eps=0.908 | loss=0.02129
+Episode   35/500 | return=-20.00 | len= 983 | eps=0.905 | loss=0.02152
+Episode   36/500 | return=-19.00 | len= 967 | eps=0.903 | loss=0.02283
+Episode   37/500 | return=-21.00 | len= 974 | eps=0.900 | loss=0.02058
+Episode   38/500 | return=-21.00 | len= 764 | eps=0.897 | loss=0.02616
+Episode   39/500 | return=-20.00 | len=1084 | eps=0.895 | loss=0.01957
+Episode   40/500 | return=-21.00 | len= 824 | eps=0.892 | loss=0.02433
+Episode   41/500 | return=-21.00 | len= 850 | eps=0.890 | loss=0.02358
+Episode   42/500 | return=-21.00 | len= 843 | eps=0.887 | loss=0.02378
+Episode   43/500 | return=-17.00 | len=1234 | eps=0.885 | loss=0.01979
+Episode   44/500 | return=-20.00 | len= 898 | eps=0.882 | loss=0.02349
+Episode   45/500 | return=-21.00 | len= 884 | eps=0.880 | loss=0.02253
+Episode   46/500 | return=-21.00 | len= 880 | eps=0.877 | loss=0.02290
+Episode   47/500 | return=-21.00 | len= 820 | eps=0.875 | loss=0.02441
+Episode   48/500 | return=-21.00 | len=1002 | eps=0.872 | loss=0.02005
+Episode   49/500 | return=-20.00 | len= 981 | eps=0.870 | loss=0.02136
+Episode   50/500 | return=-21.00 | len= 931 | eps=0.867 | loss=0.02143
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode   51/500 | return=-20.00 | len=1144 | eps=0.865 | loss=0.01862
+Episode   52/500 | return=-20.00 | len= 917 | eps=0.863 | loss=0.02316
+Episode   53/500 | return=-21.00 | len= 764 | eps=0.860 | loss=0.02598
+Episode   54/500 | return=-21.00 | len= 884 | eps=0.858 | loss=0.02265
+Episode   55/500 | return=-20.00 | len= 947 | eps=0.855 | loss=0.02242
+Episode   56/500 | return=-20.00 | len= 842 | eps=0.853 | loss=0.02484
+Episode   57/500 | return=-21.00 | len= 884 | eps=0.850 | loss=0.02267
+Episode   58/500 | return=-21.00 | len= 944 | eps=0.848 | loss=0.02114
+Episode   59/500 | return=-21.00 | len= 880 | eps=0.846 | loss=0.02291
+Episode   60/500 | return=-19.00 | len=1080 | eps=0.843 | loss=0.02060
+Episode   61/500 | return=-18.00 | len=1092 | eps=0.841 | loss=0.02153
+Episode   62/500 | return=-21.00 | len= 782 | eps=0.839 | loss=0.02564
+Episode   63/500 | return=-21.00 | len= 928 | eps=0.836 | loss=0.02171
+Episode   64/500 | return=-20.00 | len= 871 | eps=0.834 | loss=0.02418
+Episode   65/500 | return=-21.00 | len= 901 | eps=0.831 | loss=0.02230
+Episode   66/500 | return=-21.00 | len= 968 | eps=0.829 | loss=0.02086
+Episode   67/500 | return=-19.00 | len=1025 | eps=0.827 | loss=0.02142
+Episode   68/500 | return=-19.00 | len=1064 | eps=0.824 | loss=0.02094
+Episode   69/500 | return=-21.00 | len= 912 | eps=0.822 | loss=0.02192
+Episode   70/500 | return=-20.00 | len=1012 | eps=0.820 | loss=0.02082
+Episode   71/500 | return=-19.00 | len=1127 | eps=0.818 | loss=0.01951
+Episode   72/500 | return=-20.00 | len= 866 | eps=0.815 | loss=0.02438
+Episode   73/500 | return=-19.00 | len= 999 | eps=0.813 | loss=0.02216
+Episode   74/500 | return=-21.00 | len= 811 | eps=0.811 | loss=0.02449
+Episode   75/500 | return=-21.00 | len=1082 | eps=0.808 | loss=0.01840
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode   76/500 | return=-21.00 | len= 885 | eps=0.806 | loss=0.02289
+Episode   77/500 | return=-20.00 | len= 998 | eps=0.804 | loss=0.02134
+Episode   78/500 | return=-20.00 | len= 957 | eps=0.802 | loss=0.02184
+Episode   79/500 | return=-20.00 | len= 838 | eps=0.799 | loss=0.02523
+Episode   80/500 | return=-21.00 | len= 764 | eps=0.797 | loss=0.02605
+Episode   81/500 | return=-21.00 | len= 792 | eps=0.795 | loss=0.02514
+Episode   82/500 | return=-21.00 | len= 904 | eps=0.793 | loss=0.02237
+Episode   83/500 | return=-20.00 | len= 962 | eps=0.790 | loss=0.02197
+Episode   84/500 | return=-21.00 | len= 811 | eps=0.788 | loss=0.02466
+Episode   85/500 | return=-21.00 | len= 948 | eps=0.786 | loss=0.02135
+Episode   86/500 | return=-21.00 | len= 822 | eps=0.784 | loss=0.02427
+Episode   87/500 | return=-21.00 | len= 812 | eps=0.781 | loss=0.02464
+Episode   88/500 | return=-20.00 | len= 960 | eps=0.779 | loss=0.02203
+Episode   89/500 | return=-21.00 | len= 942 | eps=0.777 | loss=0.02126
+Episode   90/500 | return=-21.00 | len= 783 | eps=0.775 | loss=0.02536
+Episode   91/500 | return=-20.00 | len=1019 | eps=0.773 | loss=0.02036
+Episode   92/500 | return=-20.00 | len= 838 | eps=0.771 | loss=0.02519
+Episode   93/500 | return=-21.00 | len= 873 | eps=0.768 | loss=0.02289
+Episode   94/500 | return=-20.00 | len=1007 | eps=0.766 | loss=0.02084
+Episode   95/500 | return=-21.00 | len= 852 | eps=0.764 | loss=0.02362
+Episode   96/500 | return=-21.00 | len= 824 | eps=0.762 | loss=0.02415
+Episode   97/500 | return=-20.00 | len= 975 | eps=0.760 | loss=0.02134
+Episode   98/500 | return=-21.00 | len= 884 | eps=0.758 | loss=0.02247
+Episode   99/500 | return=-21.00 | len= 824 | eps=0.756 | loss=0.02426
+Episode  100/500 | return=-19.00 | len=1042 | eps=0.753 | loss=0.02139
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  101/500 | return=-21.00 | len= 901 | eps=0.751 | loss=0.02228
+Episode  102/500 | return=-21.00 | len= 764 | eps=0.749 | loss=0.02611
+Episode  103/500 | return=-21.00 | len= 764 | eps=0.747 | loss=0.02645
+Episode  104/500 | return=-21.00 | len=1022 | eps=0.745 | loss=0.01949
+Episode  105/500 | return=-21.00 | len= 852 | eps=0.743 | loss=0.02333
+Episode  106/500 | return=-21.00 | len= 904 | eps=0.741 | loss=0.02198
+Episode  107/500 | return=-21.00 | len= 764 | eps=0.739 | loss=0.02626
+Episode  108/500 | return=-21.00 | len= 824 | eps=0.737 | loss=0.02438
+Episode  109/500 | return=-21.00 | len= 912 | eps=0.735 | loss=0.02200
+Episode  110/500 | return=-21.00 | len= 824 | eps=0.733 | loss=0.02411
+Episode  111/500 | return=-21.00 | len= 764 | eps=0.731 | loss=0.02604
+Episode  112/500 | return=-19.00 | len= 966 | eps=0.729 | loss=0.02297
+Episode  113/500 | return=-20.00 | len= 870 | eps=0.727 | loss=0.02403
+Episode  114/500 | return=-18.00 | len=1092 | eps=0.724 | loss=0.02122
+Episode  115/500 | return=-21.00 | len= 824 | eps=0.722 | loss=0.02419
+Episode  116/500 | return=-19.00 | len=1125 | eps=0.720 | loss=0.01972
+Episode  117/500 | return=-20.00 | len=1011 | eps=0.718 | loss=0.02096
+Episode  118/500 | return=-19.00 | len=1008 | eps=0.716 | loss=0.02193
+Episode  119/500 | return=-20.00 | len=1013 | eps=0.714 | loss=0.02107
+Episode  120/500 | return=-21.00 | len= 792 | eps=0.712 | loss=0.02510
+Episode  121/500 | return=-20.00 | len= 981 | eps=0.710 | loss=0.02144
+Episode  122/500 | return=-19.00 | len=1224 | eps=0.708 | loss=0.01804
+Episode  123/500 | return=-21.00 | len= 820 | eps=0.706 | loss=0.02443
+Episode  124/500 | return=-21.00 | len= 820 | eps=0.705 | loss=0.02402
+Episode  125/500 | return=-21.00 | len= 764 | eps=0.703 | loss=0.02617
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  126/500 | return=-21.00 | len= 824 | eps=0.701 | loss=0.02410
+Episode  127/500 | return=-21.00 | len= 852 | eps=0.699 | loss=0.02327
+Episode  128/500 | return=-20.00 | len= 921 | eps=0.697 | loss=0.02317
+Episode  129/500 | return=-20.00 | len= 932 | eps=0.695 | loss=0.02242
+Episode  130/500 | return=-20.00 | len= 947 | eps=0.693 | loss=0.02212
+Episode  131/500 | return=-20.00 | len= 931 | eps=0.691 | loss=0.02248
+Episode  132/500 | return=-21.00 | len= 914 | eps=0.689 | loss=0.02186
+Episode  133/500 | return=-21.00 | len= 852 | eps=0.687 | loss=0.02359
+Episode  134/500 | return=-21.00 | len= 848 | eps=0.685 | loss=0.02366
+Episode  135/500 | return=-21.00 | len= 872 | eps=0.683 | loss=0.02299
+Episode  136/500 | return=-20.00 | len=1008 | eps=0.681 | loss=0.02077
+Episode  137/500 | return=-19.00 | len=1106 | eps=0.679 | loss=0.02009
+Episode  138/500 | return=-20.00 | len= 921 | eps=0.678 | loss=0.02280
+Episode  139/500 | return=-20.00 | len= 899 | eps=0.676 | loss=0.02339
+Episode  140/500 | return=-21.00 | len= 792 | eps=0.674 | loss=0.02542
+Episode  141/500 | return=-21.00 | len= 826 | eps=0.672 | loss=0.02407
+Episode  142/500 | return=-21.00 | len= 826 | eps=0.670 | loss=0.02402
+Episode  143/500 | return=-20.00 | len= 961 | eps=0.668 | loss=0.02191
+Episode  144/500 | return=-21.00 | len= 975 | eps=0.666 | loss=0.02048
+Episode  145/500 | return=-20.00 | len= 931 | eps=0.664 | loss=0.02251
+Episode  146/500 | return=-20.00 | len= 986 | eps=0.663 | loss=0.02136
+Episode  147/500 | return=-20.00 | len= 842 | eps=0.661 | loss=0.02523
+Episode  148/500 | return=-21.00 | len= 820 | eps=0.659 | loss=0.02436
+Episode  149/500 | return=-21.00 | len= 854 | eps=0.657 | loss=0.02355
+Episode  150/500 | return=-20.00 | len= 866 | eps=0.655 | loss=0.02435
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  151/500 | return=-21.00 | len= 792 | eps=0.654 | loss=0.02482
+Episode  152/500 | return=-20.00 | len= 983 | eps=0.652 | loss=0.02135
+Episode  153/500 | return=-21.00 | len= 824 | eps=0.650 | loss=0.02428
+Episode  154/500 | return=-21.00 | len= 792 | eps=0.648 | loss=0.02515
+Episode  155/500 | return=-21.00 | len= 997 | eps=0.646 | loss=0.01989
+Episode  156/500 | return=-20.00 | len= 842 | eps=0.645 | loss=0.02503
+Episode  157/500 | return=-21.00 | len= 764 | eps=0.643 | loss=0.02622
+Episode  158/500 | return=-20.00 | len= 838 | eps=0.641 | loss=0.02516
+Episode  159/500 | return=-21.00 | len= 792 | eps=0.639 | loss=0.02549
+Episode  160/500 | return=-21.00 | len= 972 | eps=0.637 | loss=0.02056
+Episode  161/500 | return=-21.00 | len= 792 | eps=0.636 | loss=0.02511
+Episode  162/500 | return=-21.00 | len= 764 | eps=0.634 | loss=0.02596
+Episode  163/500 | return=-20.00 | len=1035 | eps=0.632 | loss=0.02031
+Episode  164/500 | return=-21.00 | len= 764 | eps=0.630 | loss=0.02597
+Episode  165/500 | return=-21.00 | len= 783 | eps=0.629 | loss=0.02521
+Episode  166/500 | return=-21.00 | len=1006 | eps=0.627 | loss=0.01996
+Episode  167/500 | return=-20.00 | len= 838 | eps=0.625 | loss=0.02519
+Episode  168/500 | return=-21.00 | len= 888 | eps=0.623 | loss=0.02232
+Episode  169/500 | return=-20.00 | len= 906 | eps=0.622 | loss=0.02326
+Episode  170/500 | return=-21.00 | len= 793 | eps=0.620 | loss=0.02502
+Episode  171/500 | return=-21.00 | len= 902 | eps=0.618 | loss=0.02203
+Episode  172/500 | return=-20.00 | len=1161 | eps=0.617 | loss=0.01814
+Episode  173/500 | return=-20.00 | len= 931 | eps=0.615 | loss=0.02261
+Episode  174/500 | return=-21.00 | len= 886 | eps=0.613 | loss=0.02257
+Episode  175/500 | return=-21.00 | len= 916 | eps=0.612 | loss=0.02205
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  176/500 | return=-21.00 | len= 792 | eps=0.610 | loss=0.02524
+Episode  177/500 | return=-21.00 | len= 824 | eps=0.608 | loss=0.02433
+Episode  178/500 | return=-20.00 | len= 964 | eps=0.606 | loss=0.02177
+Episode  179/500 | return=-21.00 | len= 792 | eps=0.605 | loss=0.02536
+Episode  180/500 | return=-20.00 | len= 920 | eps=0.603 | loss=0.02305
+Episode  181/500 | return=-20.00 | len= 979 | eps=0.602 | loss=0.02131
+Episode  182/500 | return=-20.00 | len= 870 | eps=0.600 | loss=0.02405
+Episode  183/500 | return=-21.00 | len= 811 | eps=0.598 | loss=0.02423
+Episode  184/500 | return=-20.00 | len=1031 | eps=0.597 | loss=0.02023
+Episode  185/500 | return=-21.00 | len= 884 | eps=0.595 | loss=0.02257
+Episode  186/500 | return=-20.00 | len= 931 | eps=0.593 | loss=0.02238
+Episode  187/500 | return=-21.00 | len= 824 | eps=0.592 | loss=0.02429
+Episode  188/500 | return=-21.00 | len= 792 | eps=0.590 | loss=0.02510
+Episode  189/500 | return=-21.00 | len= 852 | eps=0.588 | loss=0.02345
+Episode  190/500 | return=-20.00 | len= 926 | eps=0.587 | loss=0.02263
+Episode  191/500 | return=-21.00 | len= 794 | eps=0.585 | loss=0.02505
+Episode  192/500 | return=-21.00 | len=1038 | eps=0.584 | loss=0.01939
+Episode  193/500 | return=-21.00 | len= 849 | eps=0.582 | loss=0.02360
+Episode  194/500 | return=-20.00 | len= 906 | eps=0.580 | loss=0.02349
+Episode  195/500 | return=-21.00 | len= 824 | eps=0.579 | loss=0.02413
+Episode  196/500 | return=-21.00 | len= 912 | eps=0.577 | loss=0.02178
+Episode  197/500 | return=-21.00 | len= 792 | eps=0.576 | loss=0.02509
+Episode  198/500 | return=-20.00 | len= 861 | eps=0.574 | loss=0.02439
+Episode  199/500 | return=-21.00 | len= 812 | eps=0.572 | loss=0.02452
+Episode  200/500 | return=-21.00 | len= 824 | eps=0.571 | loss=0.02376
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  201/500 | return=-19.00 | len= 962 | eps=0.569 | loss=0.02289
+Episode  202/500 | return=-21.00 | len= 872 | eps=0.568 | loss=0.02285
+Episode  203/500 | return=-20.00 | len= 949 | eps=0.566 | loss=0.02194
+Episode  204/500 | return=-21.00 | len= 973 | eps=0.565 | loss=0.02059
+Episode  205/500 | return=-21.00 | len= 792 | eps=0.563 | loss=0.02535
+Episode  206/500 | return=-20.00 | len=1024 | eps=0.562 | loss=0.02071
+Episode  207/500 | return=-21.00 | len=1004 | eps=0.560 | loss=0.01992
+Episode  208/500 | return=-21.00 | len= 852 | eps=0.559 | loss=0.02348
+Episode  209/500 | return=-21.00 | len= 783 | eps=0.557 | loss=0.02542
+Episode  210/500 | return=-20.00 | len= 921 | eps=0.555 | loss=0.02299
+Episode  211/500 | return=-21.00 | len= 764 | eps=0.554 | loss=0.02642
+Episode  212/500 | return=-20.00 | len=1022 | eps=0.552 | loss=0.02062
+Episode  213/500 | return=-20.00 | len= 838 | eps=0.551 | loss=0.02499
+Episode  214/500 | return=-21.00 | len= 914 | eps=0.549 | loss=0.02187
+Episode  215/500 | return=-21.00 | len= 845 | eps=0.548 | loss=0.02363
+Episode  216/500 | return=-21.00 | len= 826 | eps=0.546 | loss=0.02425
+Episode  217/500 | return=-19.00 | len= 949 | eps=0.545 | loss=0.02319
+Episode  218/500 | return=-20.00 | len= 842 | eps=0.543 | loss=0.02480
+Episode  219/500 | return=-21.00 | len= 825 | eps=0.542 | loss=0.02408
+Episode  220/500 | return=-21.00 | len= 940 | eps=0.541 | loss=0.02128
+Episode  221/500 | return=-20.00 | len=1027 | eps=0.539 | loss=0.02040
+Episode  222/500 | return=-19.00 | len= 939 | eps=0.538 | loss=0.02341
+Episode  223/500 | return=-20.00 | len=1023 | eps=0.536 | loss=0.02079
+Episode  224/500 | return=-20.00 | len= 960 | eps=0.535 | loss=0.02176
+Episode  225/500 | return=-19.00 | len=1005 | eps=0.533 | loss=0.02203
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  226/500 | return=-21.00 | len= 764 | eps=0.532 | loss=0.02607
+Episode  227/500 | return=-21.00 | len= 783 | eps=0.530 | loss=0.02549
+Episode  228/500 | return=-21.00 | len= 906 | eps=0.529 | loss=0.02208
+Episode  229/500 | return=-19.00 | len= 933 | eps=0.527 | loss=0.02383
+Episode  230/500 | return=-21.00 | len= 843 | eps=0.526 | loss=0.02391
+Episode  231/500 | return=-21.00 | len= 860 | eps=0.525 | loss=0.02341
+Episode  232/500 | return=-20.00 | len= 898 | eps=0.523 | loss=0.02339
+Episode  233/500 | return=-21.00 | len= 826 | eps=0.522 | loss=0.02443
+Episode  234/500 | return=-21.00 | len= 792 | eps=0.520 | loss=0.02520
+Episode  235/500 | return=-21.00 | len= 912 | eps=0.519 | loss=0.02180
+Episode  236/500 | return=-19.00 | len=1046 | eps=0.517 | loss=0.02126
+Episode  237/500 | return=-21.00 | len= 908 | eps=0.516 | loss=0.02187
+Episode  238/500 | return=-20.00 | len=1009 | eps=0.515 | loss=0.02092
+Episode  239/500 | return=-20.00 | len= 838 | eps=0.513 | loss=0.02505
+Episode  240/500 | return=-21.00 | len= 826 | eps=0.512 | loss=0.02388
+Episode  241/500 | return=-21.00 | len= 933 | eps=0.511 | loss=0.02132
+Episode  242/500 | return=-21.00 | len= 826 | eps=0.509 | loss=0.02408
+Episode  243/500 | return=-19.00 | len= 965 | eps=0.508 | loss=0.02294
+Episode  244/500 | return=-21.00 | len= 912 | eps=0.506 | loss=0.02191
+Episode  245/500 | return=-21.00 | len= 848 | eps=0.505 | loss=0.02372
+Episode  246/500 | return=-20.00 | len= 920 | eps=0.504 | loss=0.02269
+Episode  247/500 | return=-20.00 | len= 842 | eps=0.502 | loss=0.02492
+Episode  248/500 | return=-21.00 | len= 783 | eps=0.501 | loss=0.02549
+Episode  249/500 | return=-20.00 | len= 870 | eps=0.500 | loss=0.02396
+Episode  250/500 | return=-21.00 | len= 792 | eps=0.498 | loss=0.02508
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  251/500 | return=-21.00 | len= 884 | eps=0.497 | loss=0.02275
+Episode  252/500 | return=-18.00 | len= 995 | eps=0.496 | loss=0.02321
+Episode  253/500 | return=-21.00 | len= 854 | eps=0.494 | loss=0.02339
+Episode  254/500 | return=-21.00 | len= 840 | eps=0.493 | loss=0.02356
+Episode  255/500 | return=-21.00 | len= 812 | eps=0.492 | loss=0.02448
+Episode  256/500 | return=-20.00 | len= 928 | eps=0.490 | loss=0.02238
+Episode  257/500 | return=-20.00 | len= 932 | eps=0.489 | loss=0.02269
+Episode  258/500 | return=-21.00 | len= 852 | eps=0.488 | loss=0.02352
+Episode  259/500 | return=-21.00 | len= 933 | eps=0.486 | loss=0.02144
+Episode  260/500 | return=-21.00 | len= 912 | eps=0.485 | loss=0.02194
+Episode  261/500 | return=-21.00 | len= 854 | eps=0.484 | loss=0.02317
+Episode  262/500 | return=-21.00 | len= 764 | eps=0.482 | loss=0.02584
+Episode  263/500 | return=-21.00 | len= 824 | eps=0.481 | loss=0.02432
+Episode  264/500 | return=-21.00 | len= 880 | eps=0.480 | loss=0.02264
+Episode  265/500 | return=-21.00 | len= 882 | eps=0.478 | loss=0.02268
+Episode  266/500 | return=-21.00 | len= 852 | eps=0.477 | loss=0.02330
+Episode  267/500 | return=-19.00 | len=1083 | eps=0.476 | loss=0.02058
+Episode  268/500 | return=-20.00 | len= 930 | eps=0.475 | loss=0.02260
+Episode  269/500 | return=-21.00 | len= 792 | eps=0.473 | loss=0.02500
+Episode  270/500 | return=-20.00 | len= 870 | eps=0.472 | loss=0.02390
+Episode  271/500 | return=-20.00 | len= 986 | eps=0.471 | loss=0.02132
+Episode  272/500 | return=-21.00 | len= 824 | eps=0.470 | loss=0.02447
+Episode  273/500 | return=-21.00 | len= 880 | eps=0.468 | loss=0.02262
+Episode  274/500 | return=-21.00 | len= 764 | eps=0.467 | loss=0.02635
+Episode  275/500 | return=-20.00 | len= 842 | eps=0.466 | loss=0.02503
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  276/500 | return=-20.00 | len= 903 | eps=0.465 | loss=0.02326
+Episode  277/500 | return=-21.00 | len= 826 | eps=0.463 | loss=0.02411
+Episode  278/500 | return=-21.00 | len= 843 | eps=0.462 | loss=0.02336
+Episode  279/500 | return=-21.00 | len= 824 | eps=0.461 | loss=0.02435
+Episode  280/500 | return=-21.00 | len= 974 | eps=0.460 | loss=0.02067
+Episode  281/500 | return=-21.00 | len= 844 | eps=0.458 | loss=0.02366
+Episode  282/500 | return=-21.00 | len= 783 | eps=0.457 | loss=0.02557
+Episode  283/500 | return=-19.00 | len= 916 | eps=0.456 | loss=0.02406
+Episode  284/500 | return=-21.00 | len= 764 | eps=0.455 | loss=0.02581
+Episode  285/500 | return=-20.00 | len= 918 | eps=0.454 | loss=0.02298
+Episode  286/500 | return=-19.00 | len=1038 | eps=0.452 | loss=0.02129
+Episode  287/500 | return=-20.00 | len= 972 | eps=0.451 | loss=0.02175
+Episode  288/500 | return=-20.00 | len= 843 | eps=0.450 | loss=0.02492
+Episode  289/500 | return=-21.00 | len= 824 | eps=0.449 | loss=0.02415
+Episode  290/500 | return=-21.00 | len= 792 | eps=0.447 | loss=0.02487
+Episode  291/500 | return=-20.00 | len= 872 | eps=0.446 | loss=0.02394
+Episode  292/500 | return=-21.00 | len= 764 | eps=0.445 | loss=0.02604
+Episode  293/500 | return=-21.00 | len= 792 | eps=0.444 | loss=0.02522
+Episode  294/500 | return=-21.00 | len= 824 | eps=0.443 | loss=0.02433
+Episode  295/500 | return=-21.00 | len= 854 | eps=0.442 | loss=0.02311
+Episode  296/500 | return=-21.00 | len= 783 | eps=0.440 | loss=0.02543
+Episode  297/500 | return=-21.00 | len= 826 | eps=0.439 | loss=0.02423
+Episode  298/500 | return=-20.00 | len= 918 | eps=0.438 | loss=0.02293
+Episode  299/500 | return=-21.00 | len= 764 | eps=0.437 | loss=0.02618
+Episode  300/500 | return=-21.00 | len= 812 | eps=0.436 | loss=0.02425
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  301/500 | return=-21.00 | len= 826 | eps=0.435 | loss=0.02423
+Episode  302/500 | return=-21.00 | len= 886 | eps=0.433 | loss=0.02269
+Episode  303/500 | return=-20.00 | len=1050 | eps=0.432 | loss=0.01990
+Episode  304/500 | return=-21.00 | len= 826 | eps=0.431 | loss=0.02418
+Episode  305/500 | return=-20.00 | len= 842 | eps=0.430 | loss=0.02499
+Episode  306/500 | return=-19.00 | len=1054 | eps=0.429 | loss=0.02096
+Episode  307/500 | return=-20.00 | len= 899 | eps=0.428 | loss=0.02348
+Episode  308/500 | return=-19.00 | len= 983 | eps=0.427 | loss=0.02242
+Episode  309/500 | return=-21.00 | len= 783 | eps=0.425 | loss=0.02547
+Episode  310/500 | return=-21.00 | len= 826 | eps=0.424 | loss=0.02392
+Episode  311/500 | return=-21.00 | len= 792 | eps=0.423 | loss=0.02548
+Episode  312/500 | return=-20.00 | len= 921 | eps=0.422 | loss=0.02278
+Episode  313/500 | return=-20.00 | len= 838 | eps=0.421 | loss=0.02517
+Episode  314/500 | return=-19.00 | len= 934 | eps=0.420 | loss=0.02372
+Episode  315/500 | return=-20.00 | len= 896 | eps=0.419 | loss=0.02338
+Episode  316/500 | return=-21.00 | len= 888 | eps=0.418 | loss=0.02249
+Episode  317/500 | return=-21.00 | len= 822 | eps=0.417 | loss=0.02409
+Episode  318/500 | return=-21.00 | len= 792 | eps=0.415 | loss=0.02498
+Episode  319/500 | return=-20.00 | len= 842 | eps=0.414 | loss=0.02503
+Episode  320/500 | return=-20.00 | len=1149 | eps=0.413 | loss=0.01847
+Episode  321/500 | return=-21.00 | len= 764 | eps=0.412 | loss=0.02608
+Episode  322/500 | return=-21.00 | len= 854 | eps=0.411 | loss=0.02329
+Episode  323/500 | return=-21.00 | len= 794 | eps=0.410 | loss=0.02535
+Episode  324/500 | return=-20.00 | len=1010 | eps=0.409 | loss=0.02066
+Episode  325/500 | return=-21.00 | len= 792 | eps=0.408 | loss=0.02510
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  326/500 | return=-21.00 | len= 974 | eps=0.407 | loss=0.02058
+Episode  327/500 | return=-20.00 | len= 930 | eps=0.406 | loss=0.02246
+Episode  328/500 | return=-21.00 | len=1021 | eps=0.405 | loss=0.01949
+Episode  329/500 | return=-21.00 | len= 917 | eps=0.404 | loss=0.02171
+Episode  330/500 | return=-20.00 | len= 887 | eps=0.402 | loss=0.02402
+Episode  331/500 | return=-19.00 | len=1035 | eps=0.401 | loss=0.02143
+Episode  332/500 | return=-21.00 | len= 867 | eps=0.400 | loss=0.02306
+Episode  333/500 | return=-21.00 | len= 872 | eps=0.399 | loss=0.02314
+Episode  334/500 | return=-21.00 | len= 991 | eps=0.398 | loss=0.01989
+Episode  335/500 | return=-21.00 | len= 811 | eps=0.397 | loss=0.02459
+Episode  336/500 | return=-21.00 | len= 880 | eps=0.396 | loss=0.02266
+Episode  337/500 | return=-20.00 | len= 928 | eps=0.395 | loss=0.02276
+Episode  338/500 | return=-21.00 | len= 886 | eps=0.394 | loss=0.02267
+Episode  339/500 | return=-21.00 | len= 826 | eps=0.393 | loss=0.02414
+Episode  340/500 | return=-21.00 | len= 792 | eps=0.392 | loss=0.02513
+Episode  341/500 | return=-21.00 | len= 852 | eps=0.391 | loss=0.02304
+Episode  342/500 | return=-21.00 | len= 826 | eps=0.390 | loss=0.02403
+Episode  343/500 | return=-21.00 | len= 824 | eps=0.389 | loss=0.02414
+Episode  344/500 | return=-21.00 | len= 932 | eps=0.388 | loss=0.02138
+Episode  345/500 | return=-19.00 | len= 991 | eps=0.387 | loss=0.02214
+Episode  346/500 | return=-21.00 | len= 783 | eps=0.386 | loss=0.02497
+Episode  347/500 | return=-21.00 | len= 792 | eps=0.385 | loss=0.02551
+Episode  348/500 | return=-21.00 | len= 826 | eps=0.384 | loss=0.02412
+Episode  349/500 | return=-20.00 | len= 962 | eps=0.383 | loss=0.02180
+Episode  350/500 | return=-21.00 | len= 794 | eps=0.382 | loss=0.02505
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  351/500 | return=-21.00 | len= 826 | eps=0.381 | loss=0.02421
+Episode  352/500 | return=-21.00 | len= 764 | eps=0.380 | loss=0.02599
+Episode  353/500 | return=-21.00 | len= 946 | eps=0.379 | loss=0.02130
+Episode  354/500 | return=-21.00 | len= 843 | eps=0.378 | loss=0.02367
+Episode  355/500 | return=-21.00 | len= 856 | eps=0.377 | loss=0.02336
+Episode  356/500 | return=-20.00 | len= 958 | eps=0.376 | loss=0.02168
+Episode  357/500 | return=-21.00 | len= 824 | eps=0.375 | loss=0.02423
+Episode  358/500 | return=-20.00 | len= 870 | eps=0.374 | loss=0.02429
+Episode  359/500 | return=-20.00 | len= 842 | eps=0.373 | loss=0.02480
+Episode  360/500 | return=-19.00 | len= 921 | eps=0.372 | loss=0.02423
+Episode  361/500 | return=-21.00 | len= 783 | eps=0.371 | loss=0.02518
+Episode  362/500 | return=-21.00 | len= 843 | eps=0.370 | loss=0.02375
+Episode  363/500 | return=-20.00 | len= 923 | eps=0.369 | loss=0.02280
+Episode  364/500 | return=-20.00 | len= 921 | eps=0.368 | loss=0.02280
+Episode  365/500 | return=-21.00 | len= 783 | eps=0.367 | loss=0.02567
+Episode  366/500 | return=-21.00 | len= 825 | eps=0.366 | loss=0.02425
+Episode  367/500 | return=-20.00 | len= 838 | eps=0.365 | loss=0.02499
+Episode  368/500 | return=-21.00 | len= 944 | eps=0.364 | loss=0.02133
+Episode  369/500 | return=-21.00 | len= 783 | eps=0.363 | loss=0.02546
+Episode  370/500 | return=-21.00 | len= 826 | eps=0.363 | loss=0.02435
+Episode  371/500 | return=-21.00 | len= 826 | eps=0.362 | loss=0.02407
+Episode  372/500 | return=-21.00 | len= 884 | eps=0.361 | loss=0.02251
+Episode  373/500 | return=-21.00 | len= 764 | eps=0.360 | loss=0.02621
+Episode  374/500 | return=-21.00 | len= 826 | eps=0.359 | loss=0.02396
+Episode  375/500 | return=-20.00 | len= 963 | eps=0.358 | loss=0.02180
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  376/500 | return=-21.00 | len= 824 | eps=0.357 | loss=0.02437
+Episode  377/500 | return=-21.00 | len= 973 | eps=0.356 | loss=0.02072
+Episode  378/500 | return=-21.00 | len= 792 | eps=0.355 | loss=0.02533
+Episode  379/500 | return=-21.00 | len= 764 | eps=0.354 | loss=0.02610
+Episode  380/500 | return=-20.00 | len= 898 | eps=0.353 | loss=0.02319
+Episode  381/500 | return=-21.00 | len= 822 | eps=0.352 | loss=0.02437
+Episode  382/500 | return=-21.00 | len= 792 | eps=0.351 | loss=0.02512
+Episode  383/500 | return=-21.00 | len= 848 | eps=0.351 | loss=0.02360
+Episode  384/500 | return=-21.00 | len= 886 | eps=0.350 | loss=0.02276
+Episode  385/500 | return=-21.00 | len= 826 | eps=0.349 | loss=0.02422
+Episode  386/500 | return=-20.00 | len= 838 | eps=0.348 | loss=0.02502
+Episode  387/500 | return=-21.00 | len= 764 | eps=0.347 | loss=0.02555
+Episode  388/500 | return=-21.00 | len= 908 | eps=0.346 | loss=0.02192
+Episode  389/500 | return=-21.00 | len= 880 | eps=0.345 | loss=0.02266
+Episode  390/500 | return=-20.00 | len= 842 | eps=0.344 | loss=0.02493
+Episode  391/500 | return=-20.00 | len= 922 | eps=0.343 | loss=0.02286
+Episode  392/500 | return=-20.00 | len= 890 | eps=0.343 | loss=0.02374
+Episode  393/500 | return=-21.00 | len= 845 | eps=0.342 | loss=0.02347
+Episode  394/500 | return=-20.00 | len= 838 | eps=0.341 | loss=0.02497
+Episode  395/500 | return=-21.00 | len= 824 | eps=0.340 | loss=0.02420
+Episode  396/500 | return=-21.00 | len= 824 | eps=0.339 | loss=0.02429
+Episode  397/500 | return=-19.00 | len= 934 | eps=0.338 | loss=0.02374
+Episode  398/500 | return=-21.00 | len= 886 | eps=0.337 | loss=0.02258
+Episode  399/500 | return=-21.00 | len= 764 | eps=0.336 | loss=0.02613
+Episode  400/500 | return=-21.00 | len= 884 | eps=0.336 | loss=0.02275
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  401/500 | return=-21.00 | len= 942 | eps=0.335 | loss=0.02137
+Episode  402/500 | return=-20.00 | len= 838 | eps=0.334 | loss=0.02523
+Episode  403/500 | return=-20.00 | len=1026 | eps=0.333 | loss=0.02047
+Episode  404/500 | return=-21.00 | len= 825 | eps=0.332 | loss=0.02418
+Episode  405/500 | return=-21.00 | len= 910 | eps=0.331 | loss=0.02191
+Episode  406/500 | return=-21.00 | len= 854 | eps=0.331 | loss=0.02350
+Episode  407/500 | return=-21.00 | len= 764 | eps=0.330 | loss=0.02594
+Episode  408/500 | return=-21.00 | len= 764 | eps=0.329 | loss=0.02612
+Episode  409/500 | return=-20.00 | len= 926 | eps=0.328 | loss=0.02271
+Episode  410/500 | return=-20.00 | len= 931 | eps=0.327 | loss=0.02258
+Episode  411/500 | return=-20.00 | len= 938 | eps=0.326 | loss=0.02272
+Episode  412/500 | return=-21.00 | len= 868 | eps=0.326 | loss=0.02305
+Episode  413/500 | return=-21.00 | len= 824 | eps=0.325 | loss=0.02411
+Episode  414/500 | return=-21.00 | len= 914 | eps=0.324 | loss=0.02204
+Episode  415/500 | return=-21.00 | len= 824 | eps=0.323 | loss=0.02405
+Episode  416/500 | return=-21.00 | len= 792 | eps=0.322 | loss=0.02519
+Episode  417/500 | return=-21.00 | len= 792 | eps=0.321 | loss=0.02562
+Episode  418/500 | return=-21.00 | len=1064 | eps=0.321 | loss=0.01869
+Episode  419/500 | return=-20.00 | len= 898 | eps=0.320 | loss=0.02352
+Episode  420/500 | return=-20.00 | len= 838 | eps=0.319 | loss=0.02482
+Episode  421/500 | return=-21.00 | len= 852 | eps=0.318 | loss=0.02349
+Episode  422/500 | return=-20.00 | len= 986 | eps=0.317 | loss=0.02147
+Episode  423/500 | return=-21.00 | len= 852 | eps=0.317 | loss=0.02347
+Episode  424/500 | return=-21.00 | len= 792 | eps=0.316 | loss=0.02483
+Episode  425/500 | return=-21.00 | len= 792 | eps=0.315 | loss=0.02529
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  426/500 | return=-19.00 | len=1005 | eps=0.314 | loss=0.02177
+Episode  427/500 | return=-21.00 | len= 792 | eps=0.313 | loss=0.02509
+Episode  428/500 | return=-20.00 | len= 842 | eps=0.313 | loss=0.02482
+Episode  429/500 | return=-21.00 | len= 826 | eps=0.312 | loss=0.02405
+Episode  430/500 | return=-19.00 | len=1041 | eps=0.311 | loss=0.02140
+Episode  431/500 | return=-21.00 | len= 843 | eps=0.310 | loss=0.02408
+Episode  432/500 | return=-21.00 | len= 824 | eps=0.309 | loss=0.02432
+Episode  433/500 | return=-21.00 | len= 824 | eps=0.309 | loss=0.02416
+Episode  434/500 | return=-21.00 | len= 824 | eps=0.308 | loss=0.02425
+Episode  435/500 | return=-20.00 | len= 838 | eps=0.307 | loss=0.02539
+Episode  436/500 | return=-20.00 | len= 838 | eps=0.306 | loss=0.02488
+Episode  437/500 | return=-21.00 | len= 852 | eps=0.306 | loss=0.02345
+Episode  438/500 | return=-21.00 | len= 886 | eps=0.305 | loss=0.02259
+Episode  439/500 | return=-21.00 | len= 854 | eps=0.304 | loss=0.02356
+Episode  440/500 | return=-19.00 | len= 938 | eps=0.303 | loss=0.02344
+Episode  441/500 | return=-21.00 | len= 794 | eps=0.303 | loss=0.02500
+Episode  442/500 | return=-21.00 | len= 792 | eps=0.302 | loss=0.02496
+Episode  443/500 | return=-21.00 | len= 852 | eps=0.301 | loss=0.02332
+Episode  444/500 | return=-21.00 | len= 764 | eps=0.300 | loss=0.02633
+Episode  445/500 | return=-20.00 | len= 902 | eps=0.299 | loss=0.02332
+Episode  446/500 | return=-21.00 | len= 764 | eps=0.299 | loss=0.02620
+Episode  447/500 | return=-21.00 | len= 853 | eps=0.298 | loss=0.02344
+Episode  448/500 | return=-21.00 | len= 824 | eps=0.297 | loss=0.02425
+Episode  449/500 | return=-21.00 | len= 792 | eps=0.297 | loss=0.02518
+Episode  450/500 | return=-21.00 | len= 872 | eps=0.296 | loss=0.02284
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  451/500 | return=-21.00 | len= 824 | eps=0.295 | loss=0.02434
+Episode  452/500 | return=-21.00 | len= 792 | eps=0.294 | loss=0.02535
+Episode  453/500 | return=-21.00 | len= 826 | eps=0.294 | loss=0.02424
+Episode  454/500 | return=-21.00 | len= 792 | eps=0.293 | loss=0.02503
+Episode  455/500 | return=-21.00 | len= 792 | eps=0.292 | loss=0.02518
+Episode  456/500 | return=-21.00 | len= 764 | eps=0.291 | loss=0.02610
+Episode  457/500 | return=-21.00 | len= 783 | eps=0.291 | loss=0.02525
+Episode  458/500 | return=-20.00 | len= 844 | eps=0.290 | loss=0.02473
+Episode  459/500 | return=-21.00 | len= 880 | eps=0.289 | loss=0.02261
+Episode  460/500 | return=-21.00 | len= 764 | eps=0.289 | loss=0.02601
+Episode  461/500 | return=-21.00 | len= 792 | eps=0.288 | loss=0.02513
+Episode  462/500 | return=-21.00 | len= 764 | eps=0.287 | loss=0.02642
+Episode  463/500 | return=-21.00 | len= 946 | eps=0.286 | loss=0.02115
+Episode  464/500 | return=-21.00 | len= 824 | eps=0.286 | loss=0.02395
+Episode  465/500 | return=-19.00 | len= 945 | eps=0.285 | loss=0.02344
+Episode  466/500 | return=-21.00 | len= 764 | eps=0.284 | loss=0.02624
+Episode  467/500 | return=-21.00 | len= 824 | eps=0.284 | loss=0.02420
+Episode  468/500 | return=-21.00 | len= 993 | eps=0.283 | loss=0.02021
+Episode  469/500 | return=-21.00 | len= 825 | eps=0.282 | loss=0.02412
+Episode  470/500 | return=-21.00 | len= 826 | eps=0.281 | loss=0.02415
+Episode  471/500 | return=-21.00 | len= 852 | eps=0.281 | loss=0.02344
+Episode  472/500 | return=-21.00 | len= 826 | eps=0.280 | loss=0.02409
+Episode  473/500 | return=-21.00 | len= 764 | eps=0.279 | loss=0.02613
+Episode  474/500 | return=-21.00 | len= 852 | eps=0.279 | loss=0.02314
+Episode  475/500 | return=-21.00 | len= 792 | eps=0.278 | loss=0.02545
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Episode  476/500 | return=-21.00 | len= 824 | eps=0.277 | loss=0.02452
+Episode  477/500 | return=-20.00 | len= 947 | eps=0.277 | loss=0.02210
+Episode  478/500 | return=-21.00 | len= 826 | eps=0.276 | loss=0.02388
+Episode  479/500 | return=-21.00 | len= 792 | eps=0.275 | loss=0.02504
+Episode  480/500 | return=-21.00 | len= 764 | eps=0.275 | loss=0.02571
+Episode  481/500 | return=-19.00 | len= 937 | eps=0.274 | loss=0.02369
+Episode  482/500 | return=-21.00 | len= 826 | eps=0.273 | loss=0.02411
+Episode  483/500 | return=-19.00 | len= 945 | eps=0.273 | loss=0.02339
+Episode  484/500 | return=-20.00 | len= 838 | eps=0.272 | loss=0.02509
+Episode  485/500 | return=-21.00 | len= 944 | eps=0.271 | loss=0.02111
+Episode  486/500 | return=-21.00 | len= 783 | eps=0.271 | loss=0.02584
+Episode  487/500 | return=-21.00 | len=1004 | eps=0.270 | loss=0.02004
+Episode  488/500 | return=-21.00 | len= 854 | eps=0.269 | loss=0.02336
+Episode  489/500 | return=-21.00 | len= 843 | eps=0.269 | loss=0.02374
+Episode  490/500 | return=-21.00 | len= 903 | eps=0.268 | loss=0.02211
+Episode  491/500 | return=-21.00 | len= 824 | eps=0.267 | loss=0.02422
+Episode  492/500 | return=-20.00 | len= 928 | eps=0.267 | loss=0.02261
+Episode  493/500 | return=-21.00 | len= 783 | eps=0.266 | loss=0.02543
+Episode  494/500 | return=-20.00 | len= 842 | eps=0.265 | loss=0.02490
+Episode  495/500 | return=-21.00 | len= 914 | eps=0.265 | loss=0.02192
+Episode  496/500 | return=-21.00 | len= 886 | eps=0.264 | loss=0.02271
+Episode  497/500 | return=-20.00 | len= 842 | eps=0.263 | loss=0.02501
+Episode  498/500 | return=-21.00 | len= 824 | eps=0.263 | loss=0.02409
+Episode  499/500 | return=-21.00 | len= 820 | eps=0.262 | loss=0.02443
+Episode  500/500 | return=-20.00 | len= 838 | eps=0.261 | loss=0.02519
+  Eval over 5 eps: mean_return=-21.00 ± 0.00
+Training complete. Model saved to sarsa_pong.pt
+Final eval over 5 eps: mean_return=-21.00 ± 0.00
