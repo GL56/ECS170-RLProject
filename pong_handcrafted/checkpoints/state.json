@@ -1,0 +1,9 @@
+{
+  "gen": 20,
+  "cum_steps": 1865939,
+  "best_score": -17.75,
+  "feat_dim": 11,
+  "n_actions": 6,
+  "frameskip": 4,
+  "max_steps": 20000
+}
