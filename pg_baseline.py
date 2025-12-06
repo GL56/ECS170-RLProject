@@ -74,6 +74,7 @@ class PGConfig:
     gamma: float = 0.99
     decay: float = 0.99
     seed: int = 0
+    max_steps: int = 2_000_000  # optional cap on total environment steps
     checkpoint: Path = Path("pg_baseline.pth")
     log_path: Path = Path("pg_raw_training_log.txt")
 
@@ -159,6 +160,9 @@ def train_pg(cfg: PGConfig) -> List[float]:
             done = terminated or truncated
             steps += 1
             total_steps += 1
+            if cfg.max_steps and total_steps >= cfg.max_steps:
+                done = True
+                break
 
         reward_sum = float(sum(episode_rewards))
         reward_history.append(reward_sum)
@@ -216,6 +220,9 @@ def train_pg(cfg: PGConfig) -> List[float]:
                 cfg.checkpoint,
             )
 
+        if cfg.max_steps and total_steps >= cfg.max_steps:
+            break
+
     env.close()
     log_f.write("Training complete.\n")
     log_f.close()
@@ -229,6 +236,7 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--gamma", type=float, default=0.99)
+    parser.add_argument("--max-steps", type=int, default=2_000_000, help="Optional cap on total env steps")
     parser.add_argument("--checkpoint", type=str, default="pg_baseline.pth")
     parser.add_argument("--log", type=str, default="pg_raw_training_log.txt")
     args = parser.parse_args()
@@ -239,6 +247,7 @@ def main() -> None:
         lr=args.lr,
         gamma=args.gamma,
         seed=args.seed,
+        max_steps=args.max_steps,
         checkpoint=Path(args.checkpoint),
         log_path=Path(args.log),
     )
@@ -247,4 +256,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
