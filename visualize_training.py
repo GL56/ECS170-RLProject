@@ -1,4 +1,6 @@
 import re
+from pathlib import Path
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -7,6 +9,21 @@ def parse_training_log(log_file_path):
     """
     Parse the raw training log and extract metrics
     """
+    path = Path(log_file_path)
+    if path.suffix == ".csv":
+        df = pd.read_csv(path, comment="#")
+        episodes = list(range(1, len(df) + 1))
+        returns = df["r"].astype(float).tolist()
+        lengths = df["l"].astype(int).tolist()
+        return {
+            'episodes': episodes,
+            'returns': returns,
+            'lengths': lengths,
+            'epsilons': [],
+            'losses': [],
+            'steps': lengths
+        }
+
     episodes = []
     returns = []
     lengths = []
@@ -150,7 +167,8 @@ def print_summary_statistics(data):
         print(f"  Improvement (2nd half - 1st half): {improvement:.2f}")
 
 def main():
-    log_file = "raw_training_log.txt"  # Change this if your file has a different name
+    default_csv = Path("log/monitor.monitor.csv")
+    log_file = str(default_csv if default_csv.exists() else Path("raw_training_log.txt"))  # Change this if your file has a different name
     output_plot = "training_analysis.png"
     
     try:

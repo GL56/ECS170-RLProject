@@ -3,7 +3,7 @@ import gymnasium as gym
 import ale_py
 from stable_baselines3 import DQN
 from stable_baselines3.common.env_util import make_atari_env
-from stable_baselines3.common.vec_env import VecFrameStack, VecMonitor
+from stable_baselines3.common.vec_env import VecFrameStack, VecMonitor, SubprocVecEnv
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.evaluation import evaluate_policy
 from stable_baselines3.common import results_plotter
@@ -13,9 +13,10 @@ from stable_baselines3.common import results_plotter
 import matplotlib.pyplot as plt
 import numpy as np
 
-def train_dqn_pong():
-    # Create models directory
+def train_dqn_pong(total_timesteps=2_000_000, n_envs=8):
+    # Create models/log directories
     os.makedirs("models", exist_ok=True)
+    os.makedirs("log", exist_ok=True)
     
     # Environment: ALE/Pong-v5
     env_id = "ALE/Pong-v5"
@@ -24,10 +25,12 @@ def train_dqn_pong():
     # Note to self: Stable-Baselines3 handles frame stacking and preprocessing internally
     env = make_atari_env(
         env_id, 
-        n_envs=1,  # number of parallel environments
+        n_envs=n_envs,  # number of parallel environments
         seed=42,
+        vec_env_cls=SubprocVecEnv if n_envs > 1 else None,
+        vec_env_kwargs={"start_method": "fork"} if n_envs > 1 else None,
+        monitor_dir="log",
         env_kwargs={
-            "frameskip": 4,
             "repeat_action_probability": 0.0,
             "full_action_space": False,
             "obs_type": "rgb",
@@ -36,7 +39,6 @@ def train_dqn_pong():
     
     # Apply frame stacking (4 frames)
     env = VecFrameStack(env, n_stack=4)
-    env = VecMonitor(env, filename=os.path.join('log/', "monitor")) # check if better to wrap eval_env
 
     # Create evaluation environment
     eval_env = make_atari_env(
@@ -44,7 +46,6 @@ def train_dqn_pong():
         n_envs=1,
         seed=42,
         env_kwargs={
-            "frameskip": 4,
             "repeat_action_probability": 0.0,
             "full_action_space": False,
             "obs_type": "rgb",
@@ -56,23 +57,23 @@ def train_dqn_pong():
     model = DQN(
         "CnnPolicy", # as per documentation, policy class for DQN when images are input (applies to our Pong)
         env,
-        learning_rate=1e-4,       # should be from 0 to 1
-        buffer_size=10000,        # size of replay buffer
-        learning_starts=1000,     # how many steps of model to collect transitions for before any learning starts
-        batch_size=32,           # mini-batch size for each gradient update
+        learning_rate=2e-4,       # increased for larger batch size
+        buffer_size=1_000_000,      # size of replay buffer (fits in ~30GB RAM with optimize_memory_usage)
+        learning_starts=50_000,     # how many steps of model to collect transitions for before any learning starts
+        batch_size=512,           # take advantage of gpu power
         tau=1.0,                 # soft update coefficient - 1 for hard update
         gamma=0.99,              # discount factor
         train_freq=4,            # update the model every 4 steps
-        gradient_steps=1,        # how many gradient steps after each rollout/update
+        gradient_steps=4,        # Turbo Mode: Do 4 updates per rollout to saturate GPU
         replay_buffer_class=None,  # automatically selected
-        replay_buffer_kwargs=None, # keyword arguments to pass to replay buffer on creation
-        optimize_memory_usage=False,  # enables memory efficient variant of replay buffer at cost of more complexity
-        target_update_interval=1000,  # update target network every 1000 environment steps
-        exploration_fraction=0.3,     # fraction of entire training period over which exploration rate is reduced
+        replay_buffer_kwargs={"handle_timeout_termination": False}, # disable timeout handling to allow memory optimization
+        optimize_memory_usage=True,  # enables memory efficient variant of replay buffer at cost of more complexity
+        target_update_interval=10_000,  # update target network every 10000 environment steps
+        exploration_fraction=0.5,     # fraction of entire training period over which exploration rate is reduced
         exploration_initial_eps=1.0,  # initial value of random action probability
         exploration_final_eps=0.05,   # final value of random action probability
         max_grad_norm=10,            # max value for gradient clipping
-        tensorboard_log=None,        # location for tensorboard is we choose to log
+        tensorboard_log="log/tensorboard",        # location for tensorboard is we choose to log
         policy_kwargs=None,          # any additional arguments to be passed to policy on creation
         verbose=1,                  # print info messages -> training progress
         seed=42,
@@ -84,8 +85,6 @@ def train_dqn_pong():
     
     # Train the model
     print("Starting training...")
-    total_timesteps = 50000 # increase for better agent performance later on
-    
     model.learn(
         total_timesteps=total_timesteps,
         progress_bar=True # shows progress of training in terminal when running script
@@ -143,8 +142,8 @@ def load_and_test_model():
         env_id,
         n_envs=1,
         seed=42,
+        render_mode="human",
         env_kwargs={
-            "frameskip": 4,
             "repeat_action_probability": 0.0,
             "full_action_space": False,
             "obs_type": "rgb",
@@ -186,6 +185,7 @@ def resume_training(
         return None
 
     env_id = "ALE/Pong-v5"
+    os.makedirs("log", exist_ok=True)
 
     # Recreates the training environment exactly the same as in train_dqn_pong()
     env = make_atari_env(
