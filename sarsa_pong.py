@@ -6,22 +6,14 @@ from collections import deque
 from dataclasses import dataclass
 from typing import Optional
 import gymnasium as gym
-import ale_py # <--- This is where the magic happens, registering the environments
-
-# --- register ALE Atari environments ---
-#egister_envs(ale_gym)
-# --------------------------------------
+import ale_py 
 
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# --------------------------------
 
-# ----------------------------
-# Utilities / preprocessing
-# ----------------------------
 
 def preprocess_obs(obs: np.ndarray) -> np.ndarray:
     """
@@ -62,9 +54,6 @@ class FrameStack:
         return np.stack(list(self.frames), axis=0)
 
 
-# ----------------------------
-# Q-network (DQN-style head)
-# ----------------------------
 
 class QNet(nn.Module):
     def __init__(self, in_channels: int, n_actions: int):
@@ -94,9 +83,7 @@ class QNet(nn.Module):
         return self.fc2(x)  # Q-values
 
 
-# ----------------------------
-# Hyperparameters
-# ----------------------------
+
 
 @dataclass
 class Config:
@@ -126,9 +113,6 @@ class Config:
     save_path: str = "sarsa_pong.pt"
 
 
-# ----------------------------
-# SARSA Agent
-# ----------------------------
 
 class SARSAgent:
     def __init__(self, n_actions: int, cfg: Config, device: torch.device):
@@ -322,8 +306,7 @@ def train(cfg: Config):
 
 if __name__ == "__main__":
     cfg = Config(
-        total_episodes=500,  # increase for better play (e.g., 2,000+)
-        eval_every=25,
+        total_episodes=500,  
         eval_episodes=5,
         eps_decay_strategy="exp",
         eps_decay_rate=0.997,
