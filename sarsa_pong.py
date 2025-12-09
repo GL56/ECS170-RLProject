@@ -12,6 +12,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from gymnasium.wrappers import RecordVideo  # add this at the top with other imports
+
 
 
 
@@ -232,6 +234,82 @@ def evaluate(agent: SARSAgent, episodes: Optional[int] = None, render=False, see
         returns.append(ep_return)
     env.close()
     return float(np.mean(returns)), float(np.std(returns))
+
+
+def record_video(cfg: Config,
+                 model_path: str = "sarsa_pong.pt",
+                 episodes: int = 3,
+                 video_folder: str = "videos",
+                 seed: int = 42):
+    """
+    Play a few greedy episodes with the trained SARSA agent
+    and save gameplay videos (mp4) to `video_folder/`.
+    """
+    os.makedirs(video_folder, exist_ok=True)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    # Make an env that returns RGB frames for video recording
+    env = gym.make(
+        cfg.env_id,
+        render_mode="rgb_array",
+        frameskip=cfg.frameskip,
+        repeat_action_probability=cfg.repeat_action_probability,
+        full_action_space=cfg.full_action_space,
+        obs_type=cfg.obs_type,
+    )
+
+    # Optional: keep episode stats as usual
+    env = gym.wrappers.RecordEpisodeStatistics(env)
+
+    # Wrap with RecordVideo so Gym saves mp4 files
+    env = RecordVideo(
+        env,
+        video_folder=video_folder,
+        episode_trigger=lambda ep: True  # record every episode
+    )
+
+    try:
+        env.action_space.seed(seed)
+        env.observation_space.seed(seed)
+    except Exception:
+        pass
+
+    fs = FrameStack(cfg.frame_stack)
+    n_actions = env.action_space.n
+    agent = SARSAgent(n_actions=n_actions, cfg=cfg, device=device)
+    agent.load(model_path)
+    agent.net.eval()
+
+    print(f"Recording {episodes} episode(s) to folder: {video_folder}")
+
+    returns = []
+    for ep in range(episodes):
+        obs, _ = env.reset(seed=random.randint(0, 10_000))
+        state = fs.reset(obs)
+        done = False
+        ep_return = 0.0
+        steps = 0
+
+        # Greedy policy (epsilon = 0)
+        action = agent.select_action(state, eps=0.0)
+
+        while not done and steps < cfg.max_steps_per_ep:
+            next_obs, reward, terminated, truncated, _ = env.step(action)
+            done = terminated or truncated
+
+            next_state = fs.step(next_obs)
+            next_action = agent.select_action(next_state, eps=0.0)
+
+            ep_return += float(reward)
+            state, action = next_state, next_action
+            steps += 1
+
+        returns.append(ep_return)
+        print(f"Recorded episode {ep + 1}: return={ep_return:.2f}, len={steps}")
+
+    env.close()
+    print(f"Done. Videos saved in '{video_folder}' (look for .mp4 files).")
 
 
 def train(cfg: Config):
