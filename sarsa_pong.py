@@ -392,4 +392,4 @@ if __name__ == "__main__":
         render_eval=False,
     )
     #train(cfg)
-    record_video(cfg)
+    record_video(cfg, episodes=10)
