@@ -391,4 +391,5 @@ if __name__ == "__main__":
         lr_decay_gamma=0.9995,
         render_eval=False,
     )
-    train(cfg)
+    #train(cfg)
+    record_video(cfg)
