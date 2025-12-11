@@ -18,10 +18,7 @@ from gymnasium.wrappers import RecordVideo  # add this at the top with other imp
 
 
 def preprocess_obs(obs: np.ndarray) -> np.ndarray:
-    """
-    Convert RGB (210x160x3) to grayscale (84x84), uint8.
-    No external deps (uses PyTorch interpolate under the hood).
-    """
+    
     # obs: H x W x C (uint8)
     frame = torch.from_numpy(obs).float() / 255.0           # (H, W, C) in [0,1]
     # luminance to grayscale
@@ -91,7 +88,7 @@ class QNet(nn.Module):
 class Config:
     env_id: str = "ALE/Pong-v5"
     seed: int = 0
-    total_episodes: int = 500  # Pong is slow; bump higher for better play
+    total_episodes: int = 500  
     max_steps_per_ep: int = 5000
     gamma: float = 0.99
     learning_rate: float = 1e-4
@@ -148,10 +145,7 @@ class SARSAgent:
         return int(q.argmax(dim=1).item())
 
     def sarsa_update(self, s, a, r, s_next, a_next, done):
-        """
-        One-step SARSA TD error and gradient step:
-        target = r + gamma * Q(s', a') if not done else r
-        """
+       
         s_t = torch.from_numpy(s).float().to(self.device) / 255.0  # (4,84,84)
         s_t = s_t.unsqueeze(0)                                     # (1,4,84,84)
         q_values = self.net(s_t)                                   # (1, nA)
@@ -220,7 +214,6 @@ def evaluate(agent: SARSAgent, episodes: Optional[int] = None, render=False, see
         state = fs.reset(obs)
         done = False
         ep_return = 0.0
-        # Greedy policy (epsilon=0)
         action = agent.select_action(state, eps=0.0)
         steps = 0
         while not done and steps < agent.cfg.max_steps_per_ep:
@@ -241,10 +234,7 @@ def record_video(cfg: Config,
                  episodes: int = 3,
                  video_folder: str = "videos",
                  seed: int = 42):
-    """
-    Play a few greedy episodes with the trained SARSA agent
-    and save gameplay videos (mp4) to `video_folder/`.
-    """
+   
     os.makedirs(video_folder, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -259,10 +249,8 @@ def record_video(cfg: Config,
         obs_type=cfg.obs_type,
     )
 
-    # Optional: keep episode stats as usual
     env = gym.wrappers.RecordEpisodeStatistics(env)
 
-    # Wrap with RecordVideo so Gym saves mp4 files
     env = RecordVideo(
         env,
         video_folder=video_folder,
@@ -291,7 +279,6 @@ def record_video(cfg: Config,
         ep_return = 0.0
         steps = 0
 
-        # Greedy policy (epsilon = 0)
         action = agent.select_action(state, eps=0.0)
 
         while not done and steps < cfg.max_steps_per_ep:
@@ -391,5 +378,5 @@ if __name__ == "__main__":
         lr_decay_gamma=0.9995,
         render_eval=False,
     )
-    #train(cfg)
-    record_video(cfg, episodes=10)
+    train(cfg)
+    #record_video(cfg, episodes=10)
